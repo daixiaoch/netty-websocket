@@ -20,6 +20,11 @@
 
 **websocket集群问题**
 
+![ws](https://raw.githubusercontent.com/daixiaoch/netty-websocket/main/doc/images/ws.png 's-w')
+
+**广播集群模式**
+
+![broadcast](https://raw.githubusercontent.com/daixiaoch/netty-websocket/main/doc/images/broadcast.png 's-w')
 
 ## Copyright and License
 
