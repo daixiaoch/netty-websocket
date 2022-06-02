@@ -1,4 +1,4 @@
-package org.cola.nettywebsocket.sample;
+package org.cola.nettywebsocket.sample.demo.broadcast;
 
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
@@ -9,7 +9,6 @@ import org.cola.nettywebsocket.core.handler.channel.BroadcastChannelWrapper;
 import org.cola.nettywebsocket.core.handler.channel.ChannelWrapper;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,25 +18,24 @@ import java.util.List;
  * @Description websocket程序
  **/
 @Component
-public class WebsocketApplication {
-    private static final InternalLogger logger = InternalLoggerFactory.getInstance(WebsocketApplication.class);
+public class WebsocketBroadcastSample {
+    private static final InternalLogger logger = InternalLoggerFactory.getInstance(WebsocketBroadcastSample.class);
 
-    //@Resource
-    //private WebsocketInitialization websocketInitialization;
 
-    @PostConstruct
     public void start() {
         try {
             logger.info(Thread.currentThread().getName() + ":websocket启动中......");
-           // ServerConfig serverConfig = new ServerConfig(8003,"/ws",8004);
+            // 自定义serverHandler,可执行实现ServerHandler 接口
             ServerHandler serverHandler = new DefaultServerHandler();
+
+            //初始化广播集群列表，需要提供集群HTTP服务列表
             List<String> lists = new ArrayList<>();
             lists.add("127.0.0.1:8002");
             ChannelWrapper channelWrapper = new BroadcastChannelWrapper(lists);
+
             NettyWebSocketExecutor nettyWebSocketExecutor = new NettyWebSocketExecutor(serverHandler, channelWrapper);
             nettyWebSocketExecutor.start();
 
-            //ProxyWebSocketHandle.getProxyWebSocketHandle().sendText("","");
             logger.info(Thread.currentThread().getName() + ":websocket启动成功！！！");
         } catch (Exception e) {
             logger.error("websocket发生错误：",e);

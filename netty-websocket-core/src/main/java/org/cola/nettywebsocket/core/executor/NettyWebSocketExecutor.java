@@ -29,6 +29,9 @@ public class NettyWebSocketExecutor {
     public NettyWebSocketExecutor(){
 
     }
+    public NettyWebSocketExecutor(ServerHandler serverHandler){
+        this.serverHandler = serverHandler;
+    }
     public NettyWebSocketExecutor(ServerHandler serverHandler, ChannelWrapper channelWrapper){
         this.serverHandler = serverHandler;
         this.channelWrapper = channelWrapper;
