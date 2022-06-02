@@ -16,6 +16,23 @@
 * 提供单节点websocket服务
 * 提供集群模式的websocket服务(支持广播、redis等多种实现方式)
 ----------
+## 快速开始
+
+- 1.jdk版本为1.8或1.8+
+
+- 2.添加依赖:
+
+```xml
+	   
+        <dependency>
+            <groupId>org.cola</groupId>
+            <artifactId>netty-websocket-core</artifactId>
+            <version>${version}</version>
+        </dependency>
+```
+
+- 3.点击 [netty-websocket-samples](https://github.com/daixiaoch/netty-websocket/tree/main/netty-websocket-samples) 查看示例
+
 ## 功能架构
 
 **websocket集群问题**
