@@ -8,14 +8,18 @@
 	<a href="https://github.com/daixiaoch/netty-websocket/blob/main/LICENSE"><img src="https://img.shields.io/github/license/daixiaoch/netty-websocket.svg?style=flat-square"></a>
 </p>
 
-**netty-websocket, is a Java WebSocket Cluster Framework based on Netty.**
+**netty-websocket, 是一个基于Netty的Java WebSocket集群框架。**
 
-It offers a variety of features:
+它提供了多种功能 :
 
 
-* Provide a single node websocket server
-* Provide multiple clusters(Broadcast/redis......)
+* 提供单节点websocket服务
+* 提供集群模式的websocket服务(支持广播、redis等多种实现方式)
 ----------
+## 功能架构
+
+**websocket集群问题**
+
 
 ## Copyright and License
 
